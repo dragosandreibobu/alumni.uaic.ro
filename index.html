@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#112b40">
+  <meta name="description" content="Prototip independent pentru o posibilă Platformă Alumni UAIC. Demonstrație cu date fictive, fără afiliere sau autorizare instituțională.">
+  <title>Alumni UAIC — Prototip de platformă</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Sari la conținut</a>
+  <div class="concept-strip"><span class="concept-dot"></span> PROTOTIP INDEPENDENT · DATE FICTIVE · NU ESTE SITE-UL OFICIAL AL UAIC <a href="#despre" data-route="about">Despre demonstrație <span aria-hidden="true">↗</span></a></div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <button class="brand" data-route="home" aria-label="Alumni UAIC — pagina principală">
+        <span class="brand-symbol" aria-hidden="true">A<span class="brand-spark">✳</span></span>
+        <span class="brand-wordmark"><strong>Alumni<span class="brand-dot">.</span></strong><small>Comunitatea UAIC <span class="concept-mini">/ concept</span></small></span>
+      </button>
+      <nav class="desktop-nav" aria-label="Navigare principală">
+        <button class="nav-link active" data-route="home">Acasă</button>
+        <button class="nav-link" data-route="events">Evenimente</button>
+        <button class="nav-link" data-route="stories">Noutăți</button>
+        <button class="nav-link" data-route="mentorship" data-min-tier="extended">Mentorat <span class="nav-new">+</span></button>
+        <button class="nav-link" data-route="opportunities" data-min-tier="extended">Oportunități <span class="nav-new">+</span></button>
+        <button class="nav-link" data-route="directory" data-min-tier="extended">Comunitate <span class="nav-new">+</span></button>
+      </nav>
+      <div class="header-actions">
+        <button class="button button-quiet" data-route="member" data-min-tier="mvp"><span aria-hidden="true">◌</span> Spațiul meu</button>
+        <button class="button button-dark" data-route="events">Explorează <span aria-hidden="true">↗</span></button>
+      </div>
+      <button id="mobile-toggle" class="mobile-toggle" aria-label="Deschide meniul" aria-expanded="false">☰</button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navigare mobilă" hidden>
+      <button data-route="home">Acasă</button><button data-route="events">Evenimente</button><button data-route="stories">Noutăți</button><button data-route="member" data-min-tier="mvp">Spațiul meu</button><button data-route="mentorship" data-min-tier="extended">Mentorat</button><button data-route="opportunities" data-min-tier="extended">Oportunități</button><button data-route="directory" data-min-tier="extended">Comunitate</button><button data-route="cms">CMS</button><button data-route="admin" data-min-tier="mvp">Administrare</button><button data-route="about">Despre</button>
+    </nav>
+  </header>
+
+  <div class="lab-bar" aria-label="Controale pentru simularea celor trei propuneri">
+    <div class="container lab-inner">
+      <div class="lab-title"><span class="lab-icon">◇</span><div><strong>Studio de prototipuri</strong><small>Compară nivelurile propuse</small></div></div>
+      <div class="lab-controls">
+        <fieldset class="tier-switch"><legend class="sr-only">Nivelul produsului</legend>
+          <label><input type="radio" name="tier" value="portal"><span>01 · Portal</span></label>
+          <label><input type="radio" name="tier" value="mvp" checked><span>02 · MVP</span></label>
+          <label><input type="radio" name="tier" value="extended"><span>03 · Extins</span></label>
+        </fieldset>
+        <label class="role-control"><span>Simulează rolul</span><select id="role-switch"><option value="visitor">Vizitator</option><option value="alumni" selected>Membru Alumni</option><option value="operator">Operator</option><option value="admin">Administrator</option></select></label>
+        <button id="reset-demo" class="reset-button" title="Resetează datele locale ale demonstrației" aria-label="Resetează demonstrația">↺</button>
+      </div>
+    </div>
+    <div id="tier-hint" class="tier-hint container" aria-live="polite"></div>
+  </div>
+
+  <main id="main" tabindex="-1">
+    <section id="view-home" class="view" aria-labelledby="home-heading">
+      <div class="hero-wrap">
+        <div class="container hero">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-line"></span> MAI DEPARTE, ÎMPREUNĂ</div>
+            <h1 id="home-heading">Anii de studenție trec.<br><em>Legăturile rămân.</em></h1>
+            <p>O experiență digitală pentru absolvenții Universității „Alexandru Ioan Cuza” din Iași: evenimente, povești și noi oportunități de a contribui.</p>
+            <div class="hero-buttons"><button class="button button-gold" data-route="events">Descoperă evenimentele <span aria-hidden="true">→</span></button><button class="text-link" data-route="about">Despre concept <span aria-hidden="true">↗</span></button></div>
+            <div class="hero-footer"><span class="hero-line"></span><span>O comunitate care continuă dincolo de absolvire.</span></div>
+          </div>
+          <div class="hero-art" role="img" aria-label="Compoziție grafică editorială, simbolizând conexiunile între absolvenți">
+            <div class="art-frame">
+              <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+              <span class="art-letter">a<span>✳</span></span>
+              <div class="art-mini art-mini-top"><small>01 / ÎMPREUNĂ</small><strong>Generații diferite.<br>Același început.</strong></div>
+              <div class="art-mini art-mini-bottom"><span class="art-avatar">AP</span><span class="art-avatar another">MR</span><span class="art-avatar third">DC</span><div><strong>Oameni. Idei.</strong><small>Conexiuni care contează.</small></div></div>
+              <div class="art-caption">ALEXANDRU IOAN CUZA · IAȘI</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container quick-links" aria-label="Acces rapid">
+        <button class="quick-card" data-route="events"><span class="quick-icon">↗</span><div><small>Rămâi conectat</small><strong>Evenimente & întâlniri</strong></div><span class="quick-arrow">→</span></button>
+        <button class="quick-card" data-route="stories"><span class="quick-icon">✦</span><div><small>Din comunitate</small><strong>Noutăți & povești</strong></div><span class="quick-arrow">→</span></button>
+        <button class="quick-card" data-route="member" data-min-tier="mvp"><span class="quick-icon">◌</span><div><small>Spațiul tău</small><strong>Profil & înscrieri</strong></div><span class="quick-arrow">→</span></button>
+      </div>
+      <div class="container home-feature">
+        <div class="section-heading"><div><span class="eyebrow dark">ÎN COMUNITATE</span><h2>Următoarele întâlniri</h2><p>Momente de reconectare, învățare și dialog.</p></div><button class="text-link dark" data-route="events">Toate evenimentele <span aria-hidden="true">↗</span></button></div>
+        <div id="home-events" class="card-grid"></div>
+      </div>
+      <div class="statement"><div class="container statement-inner"><div><span class="eyebrow">DINCOLO DE DIPLOMĂ</span><h2>O universitate.<br><em>Nenumărate drumuri.</em></h2></div><p>Legătura cu universitatea poate continua prin reuniuni, schimb de experiență, mentorat și oportunități noi. Propunerea explorează cum aceste interacțiuni pot avea un spațiu digital comun.</p></div></div>
+      <div class="container home-feature"><div class="section-heading"><div><span class="eyebrow dark">JURNALUL COMUNITĂȚII</span><h2>Din viața Alumni</h2><p>Povești și informații care merită împărtășite.</p></div><button class="text-link dark" data-route="stories">Vezi toate noutățile <span aria-hidden="true">↗</span></button></div><div id="home-stories" class="card-grid stories"></div></div>
+      <div class="container home-cta"><div><span class="eyebrow">MAI MULT DECÂT O PLATFORMĂ</span><h2>Construim punți între generații.</h2><p>Explorează cum ar putea arăta experiența unui membru Alumni.</p></div><button class="button button-gold" data-route="member" data-min-tier="mvp">Vezi spațiul membrului <span aria-hidden="true">→</span></button></div>
+    </section>
+
+    <section id="view-events" class="view inner-page" hidden aria-labelledby="events-heading">
+      <div class="container"><div class="page-intro"><span class="eyebrow dark">CALENDARUL COMUNITĂȚII</span><h1 id="events-heading">Întâlnirile ne <em>aduc împreună.</em></h1><p>Conferințe, reuniuni și evenimente propuse pentru demonstrație. Toate evenimentele sunt fictive.</p></div>
+        <div class="filter-row"><label for="event-filter">Filtrează evenimente</label><select id="event-filter"><option value="all">Toate categoriile</option><option value="Reuniuni">Reuniuni</option><option value="Conferințe">Conferințe</option><option value="Comunitate">Comunitate</option></select><span class="filter-count" id="event-count"></span></div>
+        <div id="event-list" class="card-grid events-grid"></div>
+        <div class="note-card"><strong>Despre înscrieri</strong><p>În modul Portal, înscrierea este demonstrată printr-un formular simplu. În modurile MVP și Extins, înscrierile sunt asociate contului demonstrativ. Nu se trimit e-mailuri și nu se rezervă locuri reale.</p></div>
+      </div>
+    </section>
+
+    <section id="view-stories" class="view inner-page" hidden aria-labelledby="stories-heading">
+      <div class="container"><div class="page-intro"><span class="eyebrow dark">NOUTĂȚI ȘI POVEȘTI</span><h1 id="stories-heading">O comunitate cu <em>multe povești.</em></h1><p>Un spațiu editorial ușor de administrat de echipa desemnată.</p></div><div id="story-list" class="card-grid stories"></div></div>
+    </section>
+
+    <section id="view-member" class="view inner-page" hidden aria-labelledby="member-heading">
+      <div class="container"><div class="page-intro compact"><span class="eyebrow dark">SPAȚIUL PERSONAL · DEMO</span><h1 id="member-heading">Bine ai revenit, <em>Alexandra.</em></h1><p>Cont demonstrativ local. Nu există autentificare reală sau conexiune la registrele universitare.</p></div>
+        <div id="member-guard" class="guard" hidden></div>
+        <div id="member-content" class="dashboard-layout">
+          <div class="profile-main">
+            <div class="panel"><div class="panel-title"><div><span class="eyebrow dark">PROFIL</span><h2>Informațiile mele</h2></div><span class="pill amber" id="member-status">Cont înregistrat · neverificat</span></div>
+              <form id="profile-form" class="form-grid">
+                <label>Nume afișat<input id="profile-name" maxlength="70" required></label><label>Facultate<select id="profile-faculty"><option>Informatică</option><option>Drept</option><option>Litere</option><option>Economie și Administrarea Afacerilor</option><option>Matematică</option><option>Alte facultăți</option></select></label>
+                <label>Anul absolvirii<input id="profile-year" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" required></label><label>Domeniu profesional<input id="profile-field" maxlength="70"></label>
+                <label class="checkbox-row full"><input type="checkbox" id="profile-directory"> Doresc să apar în directorul demonstrativ (doar în modul Extins).</label>
+                <button type="submit" class="button button-dark full align-left">Salvează modificările <span aria-hidden="true">→</span></button>
+              </form>
+            </div>
+            <div class="panel"><div class="panel-title"><div><span class="eyebrow dark">EVENIMENTE</span><h2>Înscrierile mele</h2></div></div><div id="my-registrations"></div></div>
+          </div>
+          <aside class="profile-side"><div class="profile-identity"><div class="big-avatar">AP</div><strong id="profile-aside-name">Alexandra Popescu</strong><span>Membru înregistrat · Demo</span><div class="profile-divider"></div><p>Acest cont este fictiv. Confirmarea e-mailului, resetarea parolei și validarea statutului de absolvent necesită backend și decizie instituțională.</p></div><div class="side-callout"><small>VERIFICAREA ABSOLVENȚILOR</small><strong>Cont ≠ absolvent verificat</strong><p>În MVP, verificarea manuală ar fi opțională și posibilă doar cu un responsabil UAIC desemnat.</p></div></aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="view-cms" class="view inner-page" hidden aria-labelledby="cms-heading">
+      <div class="container"><div class="page-intro compact"><span class="eyebrow dark">SPAȚIU OPERATOR · SIMULARE</span><h1 id="cms-heading">Editor de <em>conținut.</em></h1><p>Publicarea fără intervenția dezvoltatorului, demonstrată integral în browser.</p></div><div id="cms-guard" class="guard" hidden></div>
+        <div id="cms-content" class="dashboard-layout"><div class="profile-main">
+          <div class="panel"><div class="panel-title"><div><span class="eyebrow dark">ADĂUGARE</span><h2>Publică un conținut nou</h2></div></div><form id="cms-form" class="form-grid"><label>Tipul conținutului<select id="cms-type"><option value="story">Noutate</option><option value="event">Eveniment</option></select></label><label>Titlu<input id="cms-title" required maxlength="110" placeholder="Titlul articolului sau evenimentului"></label><label class="full">Descriere<textarea id="cms-description" required maxlength="600" rows="4" placeholder="Informațiile afișate public"></textarea></label><label id="cms-category-wrap">Categorie<select id="cms-category"><option>Comunitate</option><option>Conferințe</option><option>Reuniuni</option></select></label><label id="cms-date-wrap" hidden>Data evenimentului<input type="date" id="cms-date"></label><label class="checkbox-row full"><input type="checkbox" id="cms-published" checked> Publică imediat</label><button class="button button-dark full align-left" type="submit">Salvează conținutul <span aria-hidden="true">→</span></button></form></div>
+          <div class="panel"><div class="panel-title"><div><span class="eyebrow dark">ADMINISTRARE</span><h2>Conținut existent</h2></div></div><div id="cms-items" class="manage-list"></div></div>
+        </div><aside class="profile-side"><div class="side-callout"><small>FLUXUL DE LUCRU</small><strong>Editorial, nu tehnic</strong><p>Creează, publică sau arhivează conținut. Schimbările sunt doar în memoria browserului tău.</p></div><div class="side-callout soft"><small>ÎNTR-O IMPLEMENTARE REALĂ</small><strong>Permisiuni și audit</strong><p>Fiecare acțiune ar fi validată pe server, autorizată pe rol și înregistrată într-un jurnal nemodificabil de utilizator.</p></div></aside></div>
+      </div>
+    </section>
+
+    <section id="view-admin" class="view inner-page" hidden aria-labelledby="admin-heading">
+      <div class="container"><div class="page-intro compact"><span class="eyebrow dark">PANOU ADMINISTRATIV · SIMULARE</span><h1 id="admin-heading">Imaginea de ansamblu.</h1><p>Roluri, solicitări de verificare, înscrieri și jurnal operațional. Date demonstrative, fără valoare administrativă.</p></div><div id="admin-guard" class="guard" hidden></div>
+      <div id="admin-content"><div id="admin-stats" class="stat-grid"></div><div class="dashboard-layout admin-layout"><div class="profile-main"><div class="panel"><div class="panel-title"><div><span class="eyebrow dark">VALIDARE MANUALĂ</span><h2>Solicitări în așteptare</h2></div><span class="pill amber">Demo</span></div><div id="verification-queue"></div></div><div class="panel"><div class="panel-title"><div><span class="eyebrow dark">JURNAL OPERAȚIONAL</span><h2>Acțiuni recente</h2></div><button id="download-csv" class="button button-outline">Export CSV ↓</button></div><div id="audit-list"></div></div></div><aside class="profile-side"><div class="side-callout"><small>CONTROL DE ACCES</small><strong>Acces doar prin rol</strong><p>În prototip, selectorul de rol simulează interfața. Nu reprezintă o barieră reală de securitate.</p></div><div class="side-callout soft"><small>DECIZIE UAIC</small><strong>Reguli instituționale</strong><p>Verificarea este opțională și depinde de persoana responsabilă și de procedurile aprobate.</p></div></aside></div></div></div>
+    </section>
+
+    <section id="view-mentorship" class="view inner-page" hidden aria-labelledby="mentorship-heading"><div class="container"><div class="page-intro"><span class="eyebrow dark">MODUL OPȚIONAL · DUPĂ MVP</span><h1 id="mentorship-heading">Experiența se <em>dă mai departe.</em></h1><p>O posibilă extensie pentru conectarea absolvenților cu studenți interesați de proiecte și dezvoltare profesională.</p></div><div id="mentor-list" class="card-grid"></div><div class="note-card"><strong>Dincolo de prototip</strong><p>Matching-ul, disponibilitatea mentorilor, verificarea identității și comunicarea privată ar necesita infrastructură și reguli aprobate separat.</p></div></div></section>
+    <section id="view-opportunities" class="view inner-page" hidden aria-labelledby="opportunities-heading"><div class="container"><div class="page-intro"><span class="eyebrow dark">MODUL OPȚIONAL · DUPĂ MVP</span><h1 id="opportunities-heading">Noi direcții, <em>împreună.</em></h1><p>Exemple fictive de oportunități profesionale și colaborări destinate comunității.</p></div><div class="filter-row"><label for="job-filter">Tip oportunitate</label><select id="job-filter"><option value="all">Toate</option><option value="Job">Joburi</option><option value="Voluntariat">Voluntariat</option><option value="Mentorat">Mentorat</option></select></div><div id="job-list" class="opportunity-list"></div></div></section>
+    <section id="view-directory" class="view inner-page" hidden aria-labelledby="directory-heading"><div class="container"><div class="page-intro"><span class="eyebrow dark">MODUL OPȚIONAL · DUPĂ MVP</span><h1 id="directory-heading">O rețea de <em>oameni.</em></h1><p>Director demonstrativ cu profiluri fictive și vizibilitate bazată pe consimțământ.</p></div><div class="filter-row"><label for="directory-search">Caută în director</label><input id="directory-search" type="search" placeholder="Nume, domeniu sau facultate"></div><div id="directory-list" class="card-grid"></div></div></section>
+
+    <section id="view-about" class="view inner-page" hidden aria-labelledby="about-heading"><div class="container"><div class="page-intro"><span class="eyebrow dark">CONTEXT ȘI LIMITĂRI</span><h1 id="about-heading">Un concept, <em>trei niveluri.</em></h1><p>Acest proiect este o demonstrație independentă, realizată pentru evaluarea opțiunilor de dezvoltare a unei platforme Alumni.</p></div><div class="tier-cards"><article class="tier-card"><small>01 · ALTERNATIVĂ</small><h2>Portal administrabil</h2><div class="tier-price">≈ 16.500 lei</div><p>Pagini publice, noutăți, evenimente, formulare simple și CMS. Fără conturi și profiluri.</p><button class="button button-outline" data-tier="portal">Explorează portalul ↗</button></article><article class="tier-card featured"><small>02 · RECOMANDAT</small><h2>MVP Alumni</h2><div class="tier-price">33.000 lei</div><p>Portal, conturi, profiluri, înscrieri, roluri și administrare auditată. Fără integrări UAIC.</p><button class="button button-dark" data-tier="mvp">Explorează MVP-ul ↗</button></article><article class="tier-card"><small>03 · DUPĂ MVP</small><h2>Platformă extinsă</h2><div class="tier-price">+36–50 mii lei</div><p>Module opționale: mentorat, oportunități, director și mesagerie. Estimate separat, după validarea MVP.</p><button class="button button-outline" data-tier="extended">Explorează extensiile ↗</button></article></div>
+      <div class="about-grid"><div><h2>Ce este funcțional în demo?</h2><p>Navigarea, filtrarea conținutului, simularea înscrierilor, editarea profilului, publicarea conținutului, schimbarea de rol, aprobarea fictivă și exportul CSV funcționează local, fără server.</p></div><div><h2>Ce nu este implementat?</h2><p>Autentificare reală, confirmări e-mail, verificarea absolvenților, baze de date, securitate pe server, GDPR instituțional, procesare de date reale, integrare UAIC, găzduire oficială și mesagerie.</p></div></div>
+      <div class="note-card"><strong>Identitate și statut</strong><p>Prezentarea și acest prototip nu reprezintă o comunicare oficială a UAIC sau a Fundației Alumni. Numele „Alumni UAIC” și domeniul oficial necesită aprobarea instituției. Pentru informații instituționale existente, consultă <a href="https://www.uaic.ro/alumni/" target="_blank" rel="noopener noreferrer">pagina oficială dedicată absolvenților</a> și <a href="https://www.uaic.ro/alumni/fundatia-alumni/" target="_blank" rel="noopener noreferrer">Fundația Alumni</a>.</p></div></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><div><div class="footer-logo">Alumni<span>.</span> <small>/ concept</small></div><p>Prototip independent pentru discuții și validarea funcționalităților. Nu este un serviciu oficial UAIC.</p></div><div class="footer-links"><button data-route="about">Despre concept</button><button data-route="events">Evenimente</button><button data-route="cms">CMS demo</button><button data-route="admin" data-min-tier="mvp">Admin demo</button></div><div class="footer-bottom"><span>© 2026 · Demonstrație realizată de Dragoș-Andrei Bobu</span><a href="https://github.com/dragosandreibobu/alumni.uaic.ro" target="_blank" rel="noopener noreferrer">Codul sursă ↗</a></div></div></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="event-dialog"><form method="dialog"><button class="dialog-close" aria-label="Închide dialogul">×</button></form><div id="event-dialog-body"></div></dialog>
+</body>
+</html>
