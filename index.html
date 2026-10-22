@@ -16,31 +16,6 @@
 <body>
   <a href="#main" class="skip-link">Sari la conținut</a>
   <div class="concept-strip"><span class="concept-dot"></span> PROTOTIP INDEPENDENT · DATE FICTIVE · NU ESTE SITE-UL OFICIAL AL UAIC <a href="#despre" data-route="about">Despre demonstrație <span aria-hidden="true">↗</span></a></div>
-  <header class="site-header">
-    <div class="container header-inner">
-      <button class="brand" data-route="home" aria-label="Alumni UAIC — pagina principală">
-        <span class="brand-symbol" aria-hidden="true">A<span class="brand-spark">✳</span></span>
-        <span class="brand-wordmark"><strong>Alumni<span class="brand-dot">.</span></strong><small>Comunitatea UAIC <span class="concept-mini">/ concept</span></small></span>
-      </button>
-      <nav class="desktop-nav" aria-label="Navigare principală">
-        <button class="nav-link active" data-route="home">Acasă</button>
-        <button class="nav-link" data-route="events">Evenimente</button>
-        <button class="nav-link" data-route="stories">Noutăți</button>
-        <button class="nav-link" data-route="mentorship" data-min-tier="extended">Mentorat <span class="nav-new">+</span></button>
-        <button class="nav-link" data-route="opportunities" data-min-tier="extended">Oportunități <span class="nav-new">+</span></button>
-        <button class="nav-link" data-route="directory" data-min-tier="extended">Comunitate <span class="nav-new">+</span></button>
-      </nav>
-      <div class="header-actions">
-        <button class="button button-quiet" data-route="member" data-min-tier="mvp"><span aria-hidden="true">◌</span> Spațiul meu</button>
-        <button class="button button-dark" data-route="events">Explorează <span aria-hidden="true">↗</span></button>
-      </div>
-      <button id="mobile-toggle" class="mobile-toggle" aria-label="Deschide meniul" aria-expanded="false">☰</button>
-    </div>
-    <nav class="mobile-nav" id="mobile-nav" aria-label="Navigare mobilă" hidden>
-      <button data-route="home">Acasă</button><button data-route="events">Evenimente</button><button data-route="stories">Noutăți</button><button data-route="member" data-min-tier="mvp">Spațiul meu</button><button data-route="mentorship" data-min-tier="extended">Mentorat</button><button data-route="opportunities" data-min-tier="extended">Oportunități</button><button data-route="directory" data-min-tier="extended">Comunitate</button><button data-route="cms">CMS</button><button data-route="admin" data-min-tier="mvp">Administrare</button><button data-route="about">Despre</button>
-    </nav>
-  </header>
-
   <div class="lab-bar" aria-label="Controale pentru simularea celor trei propuneri">
     <div class="container lab-inner">
       <div class="lab-title"><span class="lab-icon">◇</span><div><strong>Studio de prototipuri</strong><small>Compară nivelurile propuse</small></div></div>
@@ -57,40 +32,66 @@
     <div id="tier-hint" class="tier-hint container" aria-live="polite"></div>
   </div>
 
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <button class="brand" data-route="home" aria-label="Alumni UAIC — pagina principală">
+        <span class="brand-symbol" aria-hidden="true"><svg viewBox="0 0 46 54" width="39" height="45"><path d="M4 4h38v27c0 11-8 16-19 20C12 47 4 42 4 31z" fill="none" stroke="currentColor" stroke-width="2.6"/><path d="M11 13h24M13 18v18m10-18v21m10-21v18M10 36h26" fill="none" stroke="currentColor" stroke-width="2"/><path d="M23 7l2.2 3.9 4.5.7-3.3 3.2.7 4.5-4.1-2.1-4.1 2.1.8-4.5-3.4-3.2 4.6-.7z" fill="currentColor"/></svg></span>
+        <span class="brand-wordmark"><strong>Alumni UAIC</strong><small>Comunitatea absolvenților <span class="concept-mini">· concept</span></small></span>
+      </button>
+      <nav class="desktop-nav" aria-label="Navigare principală">
+        <button class="nav-link active" data-route="home">Acasă</button>
+        <button class="nav-link" data-route="directory" data-min-tier="extended">Comunitate</button>
+        <button class="nav-link" data-route="events">Evenimente</button>
+        <button class="nav-link" data-route="mentorship" data-min-tier="extended">Mentorat</button>
+        <button class="nav-link" data-route="opportunities" data-min-tier="extended">Oportunități</button>
+        <button class="nav-link" data-route="stories">Povești</button>
+        <button class="nav-link" data-route="about">Despre</button>
+      </nav>
+      <div class="header-actions">
+        <button class="header-icon-button" data-route="directory" data-min-tier="extended" aria-label="Caută în director">⌕</button>
+        <button class="button button-quiet" data-route="member" data-min-tier="mvp">Autentifică-te</button>
+        <button class="button button-dark" data-route="member" data-min-tier="mvp">Înregistrează-te <span aria-hidden="true">↗</span></button>
+        <button class="header-avatar" data-route="admin" data-min-tier="mvp" title="Panou admin demonstrativ" aria-label="Panou administrativ demo">AP</button>
+      </div>
+      <button id="mobile-toggle" class="mobile-toggle" aria-label="Deschide meniul" aria-expanded="false">☰</button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navigare mobilă" hidden>
+      <button data-route="home">Acasă</button><button data-route="directory" data-min-tier="extended">Comunitate / Director</button><button data-route="events">Evenimente</button><button data-route="stories">Povești</button><button data-route="member" data-min-tier="mvp">Profilul meu</button><button data-route="mentorship" data-min-tier="extended">Mentorat</button><button data-route="opportunities" data-min-tier="extended">Oportunități</button><button data-route="cms">CMS demo</button><button data-route="admin" data-min-tier="mvp">Administrare</button><button data-route="about">Despre concept</button>
+    </nav>
+  </header>
+
   <main id="main" tabindex="-1">
     <section id="view-home" class="view" aria-labelledby="home-heading">
       <div class="hero-wrap">
         <div class="container hero">
           <div class="hero-copy">
-            <div class="eyebrow"><span class="eyebrow-line"></span> MAI DEPARTE, ÎMPREUNĂ</div>
-            <h1 id="home-heading">Anii de studenție trec.<br><em>Legăturile rămân.</em></h1>
-            <p>O experiență digitală pentru absolvenții Universității „Alexandru Ioan Cuza” din Iași: evenimente, povești și noi oportunități de a contribui.</p>
-            <div class="hero-buttons"><button class="button button-gold" data-route="events">Descoperă evenimentele <span aria-hidden="true">→</span></button><button class="text-link" data-route="about">Despre concept <span aria-hidden="true">↗</span></button></div>
-            <div class="hero-footer"><span class="hero-line"></span><span>O comunitate care continuă dincolo de absolvire.</span></div>
+            <div class="eyebrow hero-kicker">COMUNITATEA ABSOLVENȚILOR · IAȘI</div>
+            <h1 id="home-heading">O comunitate<br>pentru <em>o viață întreagă.</em></h1>
+            <p>Alumni UAIC conectează absolvenții, studenții și universitatea prin oportunități, evenimente și inițiative care dau sens experienței universitare, dincolo de momentul absolvirii.</p>
+            <div class="hero-buttons"><button class="button button-gold" data-route="member" data-min-tier="mvp">Alătură-te comunității <span aria-hidden="true">→</span></button><button class="button button-ghost" data-route="stories">Descoperă povești</button></div>
           </div>
-          <div class="hero-art" role="img" aria-label="Compoziție grafică editorială, simbolizând conexiunile între absolvenți">
-            <div class="art-frame">
-              <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
-              <span class="art-letter">a<span>✳</span></span>
-              <div class="art-mini art-mini-top"><small>01 / ÎMPREUNĂ</small><strong>Generații diferite.<br>Același început.</strong></div>
-              <div class="art-mini art-mini-bottom"><span class="art-avatar">AP</span><span class="art-avatar another">MR</span><span class="art-avatar third">DC</span><div><strong>Oameni. Idei.</strong><small>Conexiuni care contează.</small></div></div>
-              <div class="art-caption">ALEXANDRU IOAN CUZA · IAȘI</div>
-            </div>
-          </div>
+          <span class="hero-image-credit">Fotografie UAIC: Wikimedia Commons · Argenna, CC BY-SA 3.0</span>
         </div>
       </div>
       <div class="container quick-links" aria-label="Acces rapid">
-        <button class="quick-card" data-route="events"><span class="quick-icon">↗</span><div><small>Rămâi conectat</small><strong>Evenimente & întâlniri</strong></div><span class="quick-arrow">→</span></button>
-        <button class="quick-card" data-route="stories"><span class="quick-icon">✦</span><div><small>Din comunitate</small><strong>Noutăți & povești</strong></div><span class="quick-arrow">→</span></button>
-        <button class="quick-card" data-route="member" data-min-tier="mvp"><span class="quick-icon">◌</span><div><small>Spațiul tău</small><strong>Profil & înscrieri</strong></div><span class="quick-arrow">→</span></button>
+        <button class="quick-card" data-route="directory" data-min-tier="extended"><span class="quick-icon">♧</span><div><strong>Comunitate</strong><small>Reconectează-te cu colegi și profesioniști</small><span class="quick-more">Vezi comunitatea →</span></div></button>
+        <button class="quick-card" data-route="events"><span class="quick-icon">▦</span><div><strong>Evenimente</strong><small>Reuniuni, conferințe și workshopuri</small><span class="quick-more">Vezi evenimentele →</span></div></button>
+        <button class="quick-card" data-route="mentorship" data-min-tier="extended"><span class="quick-icon">♙</span><div><strong>Mentorat</strong><small>Împărtășește experiența cu studenții</small><span class="quick-more">Explorează mentoratul →</span></div></button>
+        <button class="quick-card" data-route="opportunities" data-min-tier="extended"><span class="quick-icon">▣</span><div><strong>Oportunități</strong><small>Joburi, internshipuri și proiecte</small><span class="quick-more">Vezi oportunitățile →</span></div></button>
+        <button class="quick-card" data-route="about"><span class="quick-icon">♡</span><div><strong>Impact</strong><small>Susținem UAIC și generațiile viitoare</small><span class="quick-more">Află mai multe →</span></div></button>
       </div>
-      <div class="container home-feature">
-        <div class="section-heading"><div><span class="eyebrow dark">ÎN COMUNITATE</span><h2>Următoarele întâlniri</h2><p>Momente de reconectare, învățare și dialog.</p></div><button class="text-link dark" data-route="events">Toate evenimentele <span aria-hidden="true">↗</span></button></div>
-        <div id="home-events" class="card-grid"></div>
+      <div class="container stories-preview">
+        <div class="section-heading"><div><h2>Povești din comunitatea noastră</h2><p>Experiențe care ne conectează, indiferent unde ne poartă drumul.</p></div><button class="text-link dark" data-route="stories">Vezi toate poveștile <span aria-hidden="true">→</span></button></div>
+        <div class="testimonial-grid">
+          <article class="testimonial-card"><img alt="Portret demonstrativ" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=380&amp;h=480&amp;fit=crop&amp;crop=faces" loading="lazy"><div><blockquote>„UAIC mi-a oferit fundamentul pentru tot ce urmează.”</blockquote><strong>Andreea Popescu ’12</strong><small>Facultatea de Litere · profil fictiv</small></div></article>
+          <article class="testimonial-card"><img alt="Portret demonstrativ" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=380&amp;h=480&amp;fit=crop&amp;crop=faces" loading="lazy"><div><blockquote>„Am găsit aici nu doar o profesie, ci o comunitate.”</blockquote><strong>Mihai Rusu ’08</strong><small>Facultatea de Informatică · profil fictiv</small></div></article>
+          <article class="testimonial-card"><img alt="Portret demonstrativ" src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=380&amp;h=480&amp;fit=crop&amp;crop=faces" loading="lazy"><div><blockquote>„Acum e rândul meu să dau mai departe.”</blockquote><strong>Ioana Dima ’15</strong><small>Facultatea de Drept · profil fictiv</small></div></article>
+        </div>
       </div>
-      <div class="statement"><div class="container statement-inner"><div><span class="eyebrow">DINCOLO DE DIPLOMĂ</span><h2>O universitate.<br><em>Nenumărate drumuri.</em></h2></div><p>Legătura cu universitatea poate continua prin reuniuni, schimb de experiență, mentorat și oportunități noi. Propunerea explorează cum aceste interacțiuni pot avea un spațiu digital comun.</p></div></div>
-      <div class="container home-feature"><div class="section-heading"><div><span class="eyebrow dark">JURNALUL COMUNITĂȚII</span><h2>Din viața Alumni</h2><p>Povești și informații care merită împărtășite.</p></div><button class="text-link dark" data-route="stories">Vezi toate noutățile <span aria-hidden="true">↗</span></button></div><div id="home-stories" class="card-grid stories"></div></div>
-      <div class="container home-cta"><div><span class="eyebrow">MAI MULT DECÂT O PLATFORMĂ</span><h2>Construim punți între generații.</h2><p>Explorează cum ar putea arăta experiența unui membru Alumni.</p></div><button class="button button-gold" data-route="member" data-min-tier="mvp">Vezi spațiul membrului <span aria-hidden="true">→</span></button></div>
+      <div class="container home-feature compact-section"><div class="section-heading"><div><h2>Evenimente în comunitate</h2><p>Întâlniri și conversații pentru următorul capitol.</p></div><button class="text-link dark" data-route="events">Explorează calendarul →</button></div><div id="home-events" class="card-grid"></div></div>
+      <div class="container home-cta"><div><span class="eyebrow">ÎMPREUNĂ, DINCOLO DE ABSOLVIRE</span><h2>Conexiuni care merg mai departe.</h2><p>Explorează spațiul demonstrativ al membrilor Alumni.</p></div><button class="button button-gold" data-route="member" data-min-tier="mvp">Descoperă comunitatea →</button></div>
+      <div id="home-stories" hidden></div>
     </section>
 
     <section id="view-events" class="view inner-page" hidden aria-labelledby="events-heading">
