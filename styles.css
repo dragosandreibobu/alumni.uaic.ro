@@ -63,7 +63,7 @@ body[data-route="home"] .header-actions .button-quiet{background:#fff;color:#0e3
 body[data-route="home"] .header-actions .button-dark{background:#05254a}
 body[data-route="home"] .header-avatar{background:#e5d4c4}
 .hero-wrap{background:#0e3159;position:relative;overflow:hidden}
-.hero-wrap:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,34,73,.96) 0%,rgba(6,41,79,.86) 28%,rgba(7,39,75,.50) 53%,rgba(5,25,56,.09) 84%),linear-gradient(180deg,#173f711c,rgba(11,37,69,.22)),url("https://upload.wikimedia.org/wikipedia/commons/a/aa/Universitatea_%E2%80%9EAlexandru_Ioan_Cuza%E2%80%9D_%287%29.jpg") center 44% /cover no-repeat;transform:scale(1.005)}
+.hero-wrap:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,34,73,.96) 0%,rgba(6,41,79,.86) 28%,rgba(7,39,75,.50) 53%,rgba(5,25,56,.09) 84%),linear-gradient(180deg,#173f711c,rgba(11,37,69,.22)),url("https://upload.wikimedia.org/wikipedia/commons/a/aa/Universitatea_%E2%80%9EAlexandru_Ioan_Cuza%E2%80%9D_%285%29.jpg") center 44% /cover no-repeat;transform:scale(1.005)}
 .hero{display:block;position:relative;min-height:570px;padding:0}
 .hero-copy{padding:105px 0 130px;max-width:780px;position:relative;z-index:1}
 .hero-kicker{font-size:11px;color:#d9c08a;letter-spacing:.12em}
@@ -117,7 +117,7 @@ body[data-tier="mvp"] .quick-links{grid-template-columns:repeat(2,minmax(0,1fr))
 .card-grid.events-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
 .surface-card{border-color:#e7edf5;border-radius:8px;box-shadow:0 5px 23px #153c7210}
 .card-visual{height:205px}
-.visual-reunion{background:linear-gradient(0deg,#25487a40,#456ea40d),url("https://upload.wikimedia.org/wikipedia/commons/a/aa/Universitatea_%E2%80%9EAlexandru_Ioan_Cuza%E2%80%9D_%287%29.jpg") center 42% /cover no-repeat}
+.visual-reunion{background:linear-gradient(0deg,#25487a40,#456ea40d),url("https://upload.wikimedia.org/wikipedia/commons/a/aa/Universitatea_%E2%80%9EAlexandru_Ioan_Cuza%E2%80%9D_%285%29.jpg") center 42% /cover no-repeat}
 .visual-conference{background:url("https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=950&h=550&fit=crop") center /cover no-repeat}
 .visual-community{background:url("https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=950&h=550&fit=crop") center /cover no-repeat}
 .card-body{padding:20px}
@@ -156,7 +156,7 @@ body[data-tier="mvp"] .quick-links{grid-template-columns:repeat(2,minmax(0,1fr))
 .directory-person .profile-link{display:block;margin-top:18px;font-size:11px;font-weight:800;color:#1261ae;background:transparent;text-align:left;padding:0}
 .directory-person .chips{display:flex;gap:5px;flex-wrap:wrap}
 /* Member and public profile */
-.profile-cover,.person-cover{height:205px;background:linear-gradient(90deg,rgba(12,47,89,.25),rgba(11,47,88,.05)),url("https://upload.wikimedia.org/wikipedia/commons/a/aa/Universitatea_%E2%80%9EAlexandru_Ioan_Cuza%E2%80%9D_%287%29.jpg") center 40% /cover no-repeat;border-radius:10px 10px 0 0;position:relative}
+.profile-cover,.person-cover{height:205px;background:linear-gradient(90deg,rgba(12,47,89,.25),rgba(11,47,88,.05)),url("https://upload.wikimedia.org/wikipedia/commons/a/aa/Universitatea_%E2%80%9EAlexandru_Ioan_Cuza%E2%80%9D_%285%29.jpg") center 40% /cover no-repeat;border-radius:10px 10px 0 0;position:relative}
 .profile-cover span{position:absolute;bottom:15px;right:20px;color:#fff;text-shadow:0 1px 5px #234;font-size:10px;letter-spacing:.09em}
 .profile-cover-identity,.person-header{display:flex;align-items:center;gap:20px;padding:0 30px 18px;position:relative;background:#fff;border:1px solid #e8edf4;border-top:0;border-radius:0 0 10px 10px;margin-bottom:28px}
 .profile-cover-identity img,.person-header>img{width:110px;height:110px;object-fit:cover;border-radius:50%;border:5px solid #fff;box-shadow:0 0 0 1px #e5eaf1;margin-top:-45px;flex:none}
@@ -270,7 +270,7 @@ body[data-route=home] .mobile-nav button{color:#fff;background:#1e4a77}
 .container{width:calc(100% - 30px)}
 .lab-inner{flex-wrap:wrap}
 .hero{min-height:490px}
-.hero-wrap:before{background:linear-gradient(90deg,rgba(4,28,61,.94),rgba(4,27,57,.75)),url("https://upload.wikimedia.org/wikipedia/commons/a/aa/Universitatea_%E2%80%9EAlexandru_Ioan_Cuza%E2%80%9D_%287%29.jpg") center /cover no-repeat}
+.hero-wrap:before{background:linear-gradient(90deg,rgba(4,28,61,.94),rgba(4,27,57,.75)),url("https://upload.wikimedia.org/wikipedia/commons/a/aa/Universitatea_%E2%80%9EAlexandru_Ioan_Cuza%E2%80%9D_%285%29.jpg") center /cover no-repeat}
 .hero-copy{padding:60px 0 100px}
 .hero h1{font-size:clamp(39px,10.5vw,60px)}
 .hero-copy>p{font-size:13px}
