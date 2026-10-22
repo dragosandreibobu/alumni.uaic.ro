@@ -311,3 +311,20 @@ body[data-route=home] .mobile-nav button{color:#fff;background:#1e4a77}
 .donut-layout{flex-wrap:wrap}
 .insight-panel{padding:15px}
 }
+
+/* Floating prototype switcher: preserves screenshot fidelity without hiding controls */
+.lab-bar{position:fixed;left:auto;top:auto;right:20px;bottom:20px;width:min(560px,calc(100% - 40px));z-index:90;background:#fff;border:1px solid #dce5ef;border-radius:11px;box-shadow:0 15px 48px rgba(12,34,66,.22)}
+.lab-toggle{display:flex;align-items:center;justify-content:space-between;gap:9px;width:100%;padding:12px 17px;background:#123c6d;border-radius:10px;color:white;text-align:left;font-size:12px;font-weight:800}
+.lab-toggle span{color:#cbdceb;font-size:10px;font-weight:600}
+#lab-controls-section:not([hidden]){padding:0 13px 12px}
+#lab-controls-section .container{width:100%}
+#lab-controls-section .lab-inner{padding:12px 0;gap:12px}
+#lab-controls-section .lab-controls{flex-wrap:wrap;justify-content:flex-end;gap:9px}
+#lab-controls-section .tier-hint{padding-bottom:2px}
+#lab-controls-section .lab-title{flex:0 0 auto}
+#lab-controls-section .lab-title strong{font-size:10px}
+#lab-controls-section .lab-title small{display:none}
+#lab-controls-section .role-control span{display:none}
+#lab-controls-section .tier-switch span{padding:8px}
+.site-header{z-index:22}
+@media(max-width:650px){.lab-bar{right:10px;bottom:10px;width:calc(100% - 20px)}.lab-toggle span{font-size:9px}#lab-controls-section .lab-controls{justify-content:space-between;width:100%}}
