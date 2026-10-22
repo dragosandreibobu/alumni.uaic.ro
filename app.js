@@ -139,6 +139,7 @@ el("event-filter").addEventListener("change",renderEvents);el("job-filter").addE
 ["directory-faculty","directory-year","directory-field"].forEach(function(id){el(id).addEventListener("change",renderDirectory);});
 el("directory-reset").addEventListener("click",function(){el("directory-search").value="";el("directory-faculty").value="all";el("directory-year").value="all";el("directory-field").value="all";renderDirectory();});
 el("cms-type").addEventListener("change",function(e){var event=e.target.value==="event";el("cms-date-wrap").hidden=!event;el("cms-date").required=event;el("cms-category-wrap").hidden=false;});
+el("lab-toggle").addEventListener("click",function(){var pane=el("lab-controls-section");pane.hidden=!pane.hidden;el("lab-toggle").setAttribute("aria-expanded",String(!pane.hidden));});
 el("mobile-toggle").addEventListener("click",function(){var n=el("mobile-nav");n.hidden=!n.hidden;el("mobile-toggle").setAttribute("aria-expanded",String(!n.hidden));});
 el("download-csv").addEventListener("click",function(){if(roleAllowed("admin"))downloadCSV();});
 el("reset-demo").addEventListener("click",function(){if(!window.confirm("Resetezi toate datele fictive din această sesiune?"))return;state=newState();save();render();navigate("home");toast("Demonstrația a fost resetată.");});
