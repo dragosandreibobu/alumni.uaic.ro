@@ -19,3 +19,295 @@ dialog{width:min(520px,calc(100% - 40px));border:0;border-radius:9px;padding:36p
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button,.surface-card{transition:none!important}}
 body[data-tier="portal"] .quick-links{grid-template-columns:repeat(2,1fr)}
 @media(max-width:640px){body[data-tier="portal"] .quick-links{grid-template-columns:1fr}}
+
+
+/* 2026 visual redesign — aligned with the supplied six-screen UI reference */
+:root{--navy:#09264b;--navy2:#0c3566;--ink:#11294c;--gold:#f0ce88;--muted:#718099;--paper:#f7f9fc;--cream:#f4f7fb;--line:#e5ebf3;--shadow:0 10px 32px rgba(23,47,82,.07)}
+body{background:#f7f9fc;color:#132c50;font-family:"DM Sans",Arial,sans-serif}
+h1,h2,h3{color:#10274a;letter-spacing:-.035em}
+h1,h2{font-family:"Playfair Display",Georgia,serif;font-weight:700}
+h1 em,h2 em{font-style:normal;color:#d6ae67}
+.container{width:min(1400px,calc(100% - 64px))}
+.concept-strip{background:#0a2344;min-height:24px;padding:3px 12px;font-size:9px;font-weight:600;letter-spacing:.08em}
+.lab-bar{background:#eaf1f8;border-bottom:1px solid #dce7f1}
+.lab-inner{min-height:44px;padding:5px 0}
+.tier-hint{padding:0 0 6px;font-size:10px}
+.lab-icon{width:25px;height:25px}
+.lab-title strong{font-size:10px}
+.tier-switch span{padding:7px 13px}
+.tier-switch input:checked+span{background:#133e71}
+.role-control select{padding:6px 15px 6px 9px}
+.site-header{background:#fff;border-bottom:1px solid #edf0f4;position:relative}
+.header-inner{min-height:76px;gap:20px}
+.brand{min-width:205px;gap:9px}
+.brand-symbol{border:1.5px solid #e5cb90;background:transparent;color:#164477;width:37px;height:44px;border-radius:6px;display:grid;place-items:center}
+.brand-wordmark strong{font-family:"Playfair Display",Georgia,serif;font-size:22px;font-weight:700;letter-spacing:-.055em}
+.brand-wordmark small{font-size:10px}
+.concept-mini{color:#8a9eae}
+.desktop-nav{gap:19px}
+.nav-link{font-size:12px;font-weight:700;color:#526982;border-bottom:2px solid transparent;padding:29px 0 26px}
+.nav-link.active,.nav-link:hover{border-bottom-color:#c7a15c;color:#123e76}
+.nav-new{display:none}
+.header-actions{gap:10px}
+.header-icon-button{background:transparent;font-size:26px;color:#164578;width:30px;line-height:1}
+.header-avatar{height:31px;width:31px;border-radius:50%;background:#e7d0bd;color:#654330;font-weight:800;font-size:11px;border:2px solid #fff;box-shadow:0 0 0 1px #d8e0e7}
+.header-actions .button{min-height:38px;border-radius:7px;padding:10px 13px;font-size:11px}
+.header-actions .button-quiet{display:inline-flex;background:#f2f6fc;color:#153c72}
+.header-actions .button-dark{background:#092b54;color:#fff}
+body[data-route="home"] .site-header{background:#0c3059;border-color:#214875;color:#fff}
+body[data-route="home"] .nav-link{color:#e5ecf4}
+body[data-route="home"] .nav-link.active{color:#fff;border-bottom-color:#e5c78a}
+body[data-route="home"] .brand-wordmark strong,body[data-route="home"] .brand-wordmark small,body[data-route="home"] .header-icon-button{color:#fff}
+body[data-route="home"] .brand-symbol{color:#fff;border-color:#c9d7e8}
+body[data-route="home"] .header-actions .button-quiet{background:#fff;color:#0e3160}
+body[data-route="home"] .header-actions .button-dark{background:#05254a}
+body[data-route="home"] .header-avatar{background:#e5d4c4}
+.hero-wrap{background:#0e3159;position:relative;overflow:hidden}
+.hero-wrap:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,34,73,.96) 0%,rgba(6,41,79,.86) 28%,rgba(7,39,75,.50) 53%,rgba(5,25,56,.09) 84%),linear-gradient(180deg,#173f711c,rgba(11,37,69,.22)),url("https://upload.wikimedia.org/wikipedia/commons/a/aa/Universitatea_%E2%80%9EAlexandru_Ioan_Cuza%E2%80%9D_%287%29.jpg") center 44% /cover no-repeat;transform:scale(1.005)}
+.hero{display:block;position:relative;min-height:570px;padding:0}
+.hero-copy{padding:105px 0 130px;max-width:780px;position:relative;z-index:1}
+.hero-kicker{font-size:11px;color:#d9c08a;letter-spacing:.12em}
+.hero h1{font-family:"Playfair Display",Georgia,serif;font-weight:600;font-size:clamp(54px,5.3vw,88px);line-height:1.055;letter-spacing:-.04em;max-width:800px;color:#fff;margin:24px 0 22px;text-wrap:balance}
+.hero h1 em{color:#f3d99e}
+.hero-copy>p{font-size:17px;font-weight:500;line-height:1.65;max-width:550px;color:#e9f0f8}
+.hero-buttons{gap:16px;margin-top:28px}
+.hero-buttons .button{border-radius:7px;font-size:13px;min-height:49px}
+.button-gold{background:#f0d498;color:#103056}
+.button-gold:hover{background:#ffdfa3}
+.button-ghost{background:rgba(9,38,70,.16);border:1px solid #d4e3f1;color:#fff}
+.button-ghost:hover{background:rgba(255,255,255,.12)}
+.hero-image-credit{position:absolute;right:0;bottom:20px;color:#f0f4f9;font-size:9px;text-shadow:0 1px 4px #012;opacity:.8}
+.quick-links{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;box-shadow:none;background:transparent;border:none;margin-top:-66px;z-index:2;position:relative}
+.quick-card{min-width:0;display:block;min-height:176px;padding:23px 23px 20px;background:#fff;border:1px solid #e9edf4!important;border-radius:9px;text-align:left;box-shadow:0 10px 34px #173b6b12}
+.quick-card:hover{background:#f9fbfd;box-shadow:0 12px 29px #153c7226}
+.quick-card div{display:flex;flex-direction:column}
+.quick-icon{display:block;width:auto;font-size:33px;line-height:1;color:#15539e;margin-bottom:19px}
+.quick-card strong{font-family:"Playfair Display",Georgia,serif;font-size:21px;line-height:1.15;font-weight:700;color:#102b52}
+.quick-card small{font-size:12px;line-height:1.5;color:#60758b;margin:10px 0 12px;min-height:43px}
+.quick-more{font-size:11px;color:#0e58b1;font-weight:800}
+body[data-tier="portal"] .quick-links{grid-template-columns:repeat(2,minmax(0,1fr))}
+body[data-tier="mvp"] .quick-links{grid-template-columns:repeat(2,minmax(0,1fr))}
+.stories-preview{padding:42px 0 12px}
+.stories-preview h2,.home-feature h2{font-family:"Playfair Display",Georgia,serif;font-size:34px;letter-spacing:-.03em}
+.stories-preview .section-heading{margin-bottom:20px}
+.section-heading p{color:#6a7b8c}
+.testimonial-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.testimonial-card{background:#fff;border:1px solid #e8edf4;border-radius:9px;display:grid;grid-template-columns:41% 1fr;overflow:hidden;min-height:192px;box-shadow:0 6px 25px #173b6b09}
+.testimonial-card img{height:100%;width:100%;object-fit:cover}
+.testimonial-card>div{padding:20px 16px 16px;display:flex;flex-direction:column}
+.testimonial-card blockquote{font-family:"Playfair Display",Georgia,serif;font-size:18px;line-height:1.25;color:#172b50;margin:0 0 auto}
+.testimonial-card strong{font:800 12px "Manrope";margin-top:14px}
+.testimonial-card small{color:#6d7c90;font-size:10px;margin-top:4px}
+.compact-section{padding-top:53px;padding-bottom:65px}
+.home-cta{border-radius:10px;margin-bottom:65px;background:linear-gradient(120deg,#102f5d,#17558a)}
+/* Inner pages */
+.inner-page{background:#f8fafd;padding:44px 0 85px}
+.page-intro{max-width:900px;margin-bottom:24px}
+.page-intro h1{font-family:"Playfair Display",Georgia,serif;font-size:clamp(34px,4.3vw,51px);font-weight:700;margin:8px 0 10px;color:#0e2b54}
+.page-intro p{max-width:775px;font-size:13px;line-height:1.65}
+.page-intro .eyebrow{font-size:9px}
+.page-intro.compact h1{font-size:35px}
+.page-intro.compact{margin-bottom:22px}
+.filter-row{border-top:0;padding:9px 0 17px;margin:0 0 24px}
+.filter-row label{font-weight:700;color:#58708a}
+.filter-row select,.filter-row input{background:#fff;border-color:#dce6f0;border-radius:6px}
+.event-tools{display:flex}
+.event-tools .action-end{margin-left:auto}
+.event-tools .filter-count{margin-left:0}
+.card-grid.events-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.surface-card{border-color:#e7edf5;border-radius:8px;box-shadow:0 5px 23px #153c7210}
+.card-visual{height:205px}
+.visual-reunion{background:linear-gradient(0deg,#25487a40,#456ea40d),url("https://upload.wikimedia.org/wikipedia/commons/a/aa/Universitatea_%E2%80%9EAlexandru_Ioan_Cuza%E2%80%9D_%287%29.jpg") center 42% /cover no-repeat}
+.visual-conference{background:url("https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=950&h=550&fit=crop") center /cover no-repeat}
+.visual-community{background:url("https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=950&h=550&fit=crop") center /cover no-repeat}
+.card-body{padding:20px}
+.card-kicker{color:#1958a0;font-size:10px}
+.card-body h3{font-family:"Playfair Display",Georgia,serif;color:#112c55;font-weight:700;font-size:20px}
+.card-body p{color:#6b7d91;font-size:12px}
+.card-footer{border-color:#e8edf4}
+.card-footer button{color:#0e58a8}
+.date-tag{top:auto;bottom:12px;left:12px;background:#fff;border-radius:5px;font-size:20px;color:#11447b}
+.date-tag small{color:#376bac}
+.note-card{background:#ecf3fb;border-left-color:#4d80b7}
+.note-card strong{color:#0b335e}
+/* Directory */
+.directory-search-panel{padding:20px;background:#fff;border:1px solid #e6ecf4;border-radius:10px;box-shadow:0 3px 20px #102c5008}
+.directory-search-main{display:flex;align-items:center;position:relative;gap:9px}
+.directory-search-main .search-icon{position:absolute;left:14px;color:#6f8aab;font-size:23px;pointer-events:none}
+.directory-search-main input{flex:1;min-width:0;padding:13px 15px 13px 43px;border:1px solid #dae5ef;border-radius:6px;color:#102f58;background:#fbfcfe;font-size:12px}
+.directory-search-main .button{padding:13px 28px}
+.directory-filters{display:flex;align-items:end;gap:11px;margin-top:13px;flex-wrap:wrap}
+.directory-filters label{color:#718198;font-size:10px;display:flex;flex-direction:column;gap:4px;font-weight:700}
+.directory-filters select{min-width:165px;border:1px solid #dce4ee;padding:9px 11px;border-radius:6px;background:#f9fbfe;color:#3b5678;font-size:11px}
+.reset-filter{margin-left:auto;background:none;color:#155baa;font-size:11px;font-weight:800;padding:10px}
+.directory-result-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:22px 1px 13px;color:#163d6e}
+.directory-result-head strong{font-size:12px}
+.directory-result-head span{font-size:11px;color:#70869a}
+#directory-list{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.directory-person{border-color:#e7edf4;padding:17px;box-shadow:0 4px 16px #10274a0d;transition:.15s}
+.directory-person:hover{transform:translateY(-2px);box-shadow:0 10px 26px #10274a18}
+.directory-person .mentor-header{flex-direction:column;align-items:start;gap:14px;margin-bottom:8px}
+.directory-avatar{width:70px;height:70px;border-radius:8px;overflow:hidden}
+.directory-avatar img{height:100%;width:100%;object-fit:cover}
+.directory-person .mentor-header h3{font-family:"Manrope",sans-serif;font-size:15px;font-weight:800}
+.directory-person .mentor-header small{color:#69809a;font-size:11px}
+.directory-person p{font-size:11px;line-height:1.6;min-height:33px}
+.directory-person .chip{background:#e8f1fe;color:#215f9e}
+.directory-person .profile-link{display:block;margin-top:18px;font-size:11px;font-weight:800;color:#1261ae;background:transparent;text-align:left;padding:0}
+.directory-person .chips{display:flex;gap:5px;flex-wrap:wrap}
+/* Member and public profile */
+.profile-cover,.person-cover{height:205px;background:linear-gradient(90deg,rgba(12,47,89,.25),rgba(11,47,88,.05)),url("https://upload.wikimedia.org/wikipedia/commons/a/aa/Universitatea_%E2%80%9EAlexandru_Ioan_Cuza%E2%80%9D_%287%29.jpg") center 40% /cover no-repeat;border-radius:10px 10px 0 0;position:relative}
+.profile-cover span{position:absolute;bottom:15px;right:20px;color:#fff;text-shadow:0 1px 5px #234;font-size:10px;letter-spacing:.09em}
+.profile-cover-identity,.person-header{display:flex;align-items:center;gap:20px;padding:0 30px 18px;position:relative;background:#fff;border:1px solid #e8edf4;border-top:0;border-radius:0 0 10px 10px;margin-bottom:28px}
+.profile-cover-identity img,.person-header>img{width:110px;height:110px;object-fit:cover;border-radius:50%;border:5px solid #fff;box-shadow:0 0 0 1px #e5eaf1;margin-top:-45px;flex:none}
+.profile-cover-identity div,.person-header-meta{flex:1;min-width:0}
+.profile-cover-identity strong{display:block;font:700 24px "Playfair Display";color:#112f58}
+.profile-cover-identity small{font-size:12px;color:#607993}
+.dashboard-layout{grid-template-columns:minmax(0,1fr) 290px}
+.panel{border-color:#e5ecf5;border-radius:9px;box-shadow:0 3px 14px #1d477008}
+.panel-title h2{font-family:"Playfair Display",Georgia,serif;font-size:24px}
+.profile-identity{background:#103965}
+.profile-identity .big-avatar{background:#d7ebfa;color:#17477b}
+.profile-identity p{color:#c5d9e9}
+.back-link{background:none;color:#1c63ac;font-size:12px;font-weight:800;padding:0 0 17px}
+.person-cover{height:235px}
+.person-header{padding-bottom:22px}
+.person-header-meta h1{font:700 29px "Playfair Display";margin:0 0 4px}
+.person-header-meta p{margin:0;color:#64768b;font-size:13px}
+.person-header-meta span{font-size:11px;color:#8a9aae}
+.person-actions{display:flex;gap:8px;flex-wrap:wrap}
+.person-columns{display:grid;grid-template-columns:190px minmax(0,1fr) 255px;gap:18px}
+.person-tabs{display:flex;flex-direction:column;gap:5px}
+.person-tabs button{background:transparent;text-align:left;padding:12px 14px;border-radius:6px;color:#56718f;font-size:12px;font-weight:700}
+.person-tabs button.active,.person-tabs button:hover{background:#e5f0fc;color:#175aa1}
+.person-main{min-height:280px}
+.person-main h2{font-family:"Playfair Display";font-size:22px}
+.person-main p,.person-contact p{font-size:12px;line-height:1.9;color:#6c7b90}
+.person-contact h3{font-size:16px}
+.person-interest{display:inline-block;padding:7px 12px;margin:4px 3px 0 0;color:#265d94;background:#e5f1fd;font-size:11px;font-weight:700;border-radius:20px}
+/* Mentorship */
+.mentor-cta-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:25px}
+.mentor-cta{min-height:194px;padding:26px;border:1px solid #e9edf4;border-radius:9px;display:flex;gap:17px}
+.mentor-cta.gold-tint{background:#faf5eb}
+.mentor-cta.blue-tint{background:#eff6fe}
+.mentor-cta-icon{width:54px;height:54px;background:#fff;border-radius:12px;color:#155ba5;font-size:32px;display:grid;place-items:center;flex-shrink:0}
+.mentor-cta h2{font-family:"Playfair Display";font-size:22px;margin-bottom:7px}
+.mentor-cta p{font-size:12px;color:#667a90;line-height:1.6;max-width:445px}
+.mentor-cta .button{min-height:39px}
+.topic-cloud{padding:6px 0 23px}
+.topic-cloud>strong{font-size:13px}
+.topic-cloud div{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.topic-cloud span{background:#e6f0fb;color:#2b619a;padding:7px 13px;border-radius:30px;font-size:11px;font-weight:700}
+.mentor-list-heading{margin:15px 0}
+.mentor-card{border-color:#e7edf4}
+.mentor-avatar{background:#e5f0ff;color:#1559a1}
+/* Admin dashboard */
+#view-admin{padding-top:20px}
+#view-admin .container{width:min(1450px,calc(100% - 44px))}
+.admin-shell{display:grid;grid-template-columns:205px minmax(0,1fr);background:#fff;border-radius:10px;border:1px solid #e8edf4;overflow:hidden;min-height:750px;box-shadow:0 3px 22px #0d355b10}
+.admin-sidebar{background:linear-gradient(#09284c,#152e48);padding:22px 14px;display:flex;flex-direction:column;gap:5px}
+.sidebar-brand{font-family:"Playfair Display";font-size:19px;color:#fff;padding:4px 12px 22px;margin-bottom:13px;border-bottom:1px solid #385571}
+.sidebar-brand small{display:block;color:#aec3d5;font-family:"DM Sans";font-size:10px;margin-top:6px}
+.admin-sidebar button{text-align:left;padding:12px 13px;background:none;color:#d4e0ed;font-size:12px;font-weight:600;border-radius:6px}
+.admin-sidebar button.active,.admin-sidebar button:hover{background:#1d5487;color:#fff}
+.admin-shell-content{padding:29px;min-width:0;background:#f8fafd}
+.admin-shell-content>.page-intro{max-width:100%}
+.admin-shell-content>.page-intro h1{font-size:33px}
+.admin-layout{grid-template-columns:minmax(0,1fr) 250px}
+.stat-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin-bottom:17px}
+.stat-box{padding:17px;border-radius:8px}
+.stat-box strong{color:#0c315c;font:800 26px "Manrope"}
+.stat-box small{font-size:10px;color:#70859a}
+.stat-box small:after{content:"  ↗  Demo";display:inline-block;color:#219960;font-weight:800}
+.insights-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:15px;margin-bottom:20px}
+.insight-panel{padding:22px;min-width:0}
+.insight-panel h2{font:800 15px "Manrope";margin-bottom:20px;letter-spacing:0}
+.insight-panel h2 small{display:inline-block;font-weight:500;font-size:10px;color:#8294a7;margin-left:7px}
+.trend-chart{position:relative;height:175px;display:flex;align-items:end;background:repeating-linear-gradient(to top,transparent 0,transparent 43px,#e5edf6 44px),repeating-linear-gradient(to right,transparent 0,transparent 56px,#f0f4f8 57px)}
+.trend-chart svg{width:100%;height:100%;position:relative}
+.chart-labels{display:flex;justify-content:space-between;font-size:9px;color:#90a0b0;margin-top:9px}
+.donut-layout{display:flex;align-items:center;justify-content:center;gap:23px}
+.donut{flex:none;width:138px;height:138px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#1869ad 0 24%,#32a8d1 24% 42%,#269a8b 42% 58%,#7969b3 58% 72%,#a8a9e2 72% 84%,#d7dfe8 84% 100%);position:relative}
+.donut:after{content:"";position:absolute;inset:26px;background:white;border-radius:50%}
+.donut span{z-index:1;text-align:center}
+.donut strong{font:800 16px "Manrope";display:block}
+.donut small{color:#8695a5;font-size:9px}
+.donut-layout ul{list-style:none;padding:0;margin:0;min-width:120px}
+.donut-layout li{display:flex;justify-content:space-between;gap:9px;margin:8px 0;color:#637c98;font-size:10px}
+.donut-layout li:before{content:"•";color:#266db5;font-weight:900;margin-right:2px}
+.donut-layout li b{margin-left:auto;color:#294e72}
+.admin-shell .profile-main .panel{background:#fff}
+.site-footer{background:#09294f}
+.site-footer .footer-logo{font-family:"Playfair Display"}
+/* responsive refinement */
+@media(max-width:1370px){
+.header-inner{gap:10px}.brand{min-width:180px}.desktop-nav{gap:12px}.nav-link{font-size:11px}
+.header-actions{gap:6px}.header-actions .button{font-size:10px;padding:10px}
+.testimonial-card blockquote{font-size:16px}
+}
+@media(max-width:1130px){
+.desktop-nav{gap:10px}.header-actions .button-quiet{display:none}
+.quick-links{grid-template-columns:repeat(3,minmax(0,1fr))}
+#directory-list{grid-template-columns:repeat(3,minmax(0,1fr))}
+.person-columns{grid-template-columns:170px 1fr}.person-contact{grid-column:2}
+.insights-grid{grid-template-columns:1fr}
+}
+@media(max-width:930px){
+.desktop-nav,.header-actions{display:none!important}
+.mobile-toggle{display:block;color:#143d70}
+body[data-route=home] .mobile-toggle{color:#fff}
+body[data-route=home] .mobile-nav:not([hidden]){background:#113863}
+body[data-route=home] .mobile-nav button{color:#fff;background:#1e4a77}
+.hero{min-height:530px}.hero-copy{padding-top:75px}
+.hero h1{font-size:60px}
+.testimonial-grid{grid-template-columns:1fr 1fr}
+.admin-shell{grid-template-columns:165px 1fr}
+.admin-shell-content{padding:18px}
+.admin-layout{grid-template-columns:1fr}
+#directory-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:680px){
+.container{width:calc(100% - 30px)}
+.lab-inner{flex-wrap:wrap}
+.hero{min-height:490px}
+.hero-wrap:before{background:linear-gradient(90deg,rgba(4,28,61,.94),rgba(4,27,57,.75)),url("https://upload.wikimedia.org/wikipedia/commons/a/aa/Universitatea_%E2%80%9EAlexandru_Ioan_Cuza%E2%80%9D_%287%29.jpg") center /cover no-repeat}
+.hero-copy{padding:60px 0 100px}
+.hero h1{font-size:clamp(39px,10.5vw,60px)}
+.hero-copy>p{font-size:13px}
+.hero-image-credit{font-size:7px;bottom:75px;right:5px;left:5px}
+.quick-links,body[data-tier="portal"] .quick-links,body[data-tier="mvp"] .quick-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.quick-card{min-height:163px;padding:17px}
+.quick-card strong{font-size:17px}
+.quick-card small{font-size:10px}
+.quick-icon{font-size:27px;margin-bottom:12px}
+.quick-more{font-size:9px}
+.testimonial-grid,.mentor-cta-row,#directory-list,.insights-grid{grid-template-columns:1fr}
+.testimonial-card{min-height:185px}
+.stories-preview{padding-top:30px}
+.event-tools .action-end{margin-left:0}
+.directory-filters{align-items:stretch}
+.directory-filters label{flex:1 1 44%}
+.directory-filters select{min-width:0;width:100%}
+.directory-filters .reset-filter{margin-left:0}
+.directory-search-main input{width:100%;font-size:10px}
+.directory-search-main .button{padding:12px;font-size:10px}
+.profile-cover{height:160px}
+.profile-cover-identity,.person-header{gap:9px;flex-wrap:wrap;padding:0 15px 18px}
+.profile-cover-identity img,.person-header>img{width:85px;height:85px;margin-top:-30px}
+.profile-cover-identity strong{font-size:19px}
+.profile-cover-identity .button{width:100%}
+.person-columns{grid-template-columns:1fr}
+.person-tabs{display:flex;flex-direction:row;overflow-x:auto;padding-bottom:5px}
+.person-tabs button{white-space:nowrap}
+.person-contact{grid-column:auto}
+.person-actions{width:100%}
+.person-actions .button{flex:1}
+.admin-shell{display:block}
+.admin-sidebar{display:flex;flex-direction:row;flex-wrap:wrap;padding:10px;gap:5px}
+.sidebar-brand{width:100%;padding:5px;margin:0 0 3px;border:0}
+.admin-sidebar button{font-size:10px;padding:9px}
+.admin-shell-content{padding:14px}
+.stat-grid{grid-template-columns:repeat(2,1fr)}
+.donut-layout{flex-wrap:wrap}
+.insight-panel{padding:15px}
+}
