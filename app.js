@@ -61,7 +61,7 @@ function updateNav(){
 }
 function navigate(next){
  var restricted={member:"mvp",admin:"mvp",mentorship:"extended",opportunities:"extended",directory:"extended",person:"extended"};
- if(restricted[next]&&!tierAllowed(restricted[next])){toast("Secțiunea este disponibilă din nivelul "+(restricted[next]==="mvp"?"MVP":"Extins")+". Schimbă nivelul în Studio.");return;}
+ if(next==="person"&&!activePerson){next="directory";}if(restricted[next]&&!tierAllowed(restricted[next])){toast("Secțiunea este disponibilă din nivelul "+(restricted[next]==="mvp"?"MVP":"Extins")+". Schimbă nivelul în Studio.");return;}
  if(!el("view-"+next))next="home";
  route=next;document.body.dataset.route=next;document.querySelectorAll(".view").forEach(function(node){node.hidden=node.id!=="view-"+next;});updateNav();if(["member","cms","admin"].indexOf(next)>=0)checkView(next);
  el("mobile-nav").hidden=true;el("mobile-toggle").setAttribute("aria-expanded","false");window.scrollTo(0,0);document.title=(next==="home"?"Alumni UAIC":el("view-"+next).querySelector("h1").textContent)+" — Prototip";
@@ -88,7 +88,7 @@ function renderCMS(){
  el("cms-items").innerHTML=state.stories.concat(state.events).map(function(e){var type=String(e.id).charAt(0)==="e"?"event":"story";return '<div class="manage-row"><div><strong>'+esc(e.title)+'</strong><small>'+(type==="event"?"Eveniment":"Noutate")+' · '+esc(e.category)+' · '+(e.published?"Publicat":"Arhivat")+'</small></div><div class="manage-actions"><button class="mini-button" data-publish="'+esc(e.id)+'">'+(e.published?"Arhivează":"Publică")+'</button></div></div>';}).join("")||empty("Niciun conținut.","Creează unul folosind formularul.");}
 function renderAdmin(){
  var joined=state.signups.length,pending=state.verifications.filter(function(x){return x.status==="pending";}).length;
- var vals=[[visibleEvents().length,"Evenimente publicate"],[visibleStories().length,"Noutăți publicate"],[joined,"Înscrieri simulate"],[pending,"Validări în așteptare"]];
+ var vals=[["1.234","Membri înregistrați · fictiv"],["56","Evenimente · fictiv"],["89","Înscrieri la mentorat · fictiv"],["312","Participări la evenimente · fictiv"]];
  el("admin-stats").innerHTML=vals.map(function(x){return '<div class="stat-box"><strong>'+esc(x[0])+'</strong><small>'+esc(x[1])+'</small></div>';}).join("");
  el("verification-queue").innerHTML=state.verifications.map(function(x){return '<div class="queue-row"><div><strong>'+esc(x.name)+'</strong><small>'+esc(x.faculty)+' · '+esc(x.year)+' · '+esc(x.status==="pending"?"În așteptare":x.status==="approved"?"Aprobat în demo":"Respins în demo")+'</small></div><div class="manage-actions">'+(x.status==="pending"?'<button class="mini-button success" data-verify="'+esc(x.id)+'" data-verdict="approved">Aprobă</button><button class="mini-button danger" data-verify="'+esc(x.id)+'" data-verdict="rejected">Respinge</button>':'<span class="pill '+(x.status==="approved"?"green":"amber")+'">'+esc(x.status==="approved"?"Aprobat":"Respins")+'</span>')+'</div></div>';}).join("");
  el("audit-list").innerHTML=state.audit.slice(0,12).map(function(a){return '<div class="audit-row"><span class="audit-icon">↳</span><p>'+esc(a.action)+'</p><small>'+esc(a.time)+'</small></div>';}).join("");}
@@ -110,6 +110,12 @@ function renderPerson(){if(!activePerson)return;el("person-photo").src=activePer
 function render(){updateNav();renderEvents();renderStories();renderMember();renderCMS();renderAdmin();renderMentorship();renderJobs();renderDirectory();if(["member","cms","admin"].indexOf(route)>=0)checkView(route);}
 function downloadCSV(){var rows=[["eveniment","data","categorie","inscrieri_demo","locuri_ramase"]];state.events.forEach(function(e){rows.push([e.title,e.date,e.category,String(e.baseCount+countRegistrations(e.id)),String(spots(e))]);});var body=rows.map(function(row){return row.map(function(v){var cell=String(v);if(/^\s*[=+@-]/.test(cell))cell="'"+cell;return '"'+cell.replace(/"/g,'""')+'"';}).join(",");}).join("\r\n");var blob=new Blob(["\uFEFF"+body],{type:"text/csv;charset=utf-8"});var url=URL.createObjectURL(blob);var a=document.createElement("a");a.href=url;a.download="alumni-uaic-date-demonstrative.csv";document.body.append(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url);},1000);logAction("Export CSV demonstrativ");save();renderAdmin();toast("CSV cu date fictive exportat.");}
 document.addEventListener("click",function(e){
+ var personBtn=e.target.closest("[data-person]");if(personBtn){openPerson(Number(personBtn.dataset.person));return;}
+ var personTab=e.target.closest("[data-person-tab]");if(personTab){activePersonTab=personTab.dataset.personTab;renderPerson();return;}
+ var connectBtn=e.target.closest("#person-connect");if(connectBtn){toast("Conectarea cu un membru este o simulare. Nu se transmit mesaje.");return;}
+ var mentorCTA=e.target.closest("[data-mentor-cta]");if(mentorCTA){toast("Programul de mentorat este doar demonstrativ. Nu se transmit cereri reale.");return;}
+ var scrollBtn=e.target.closest("[data-scroll]");if(scrollBtn){var target=el(scrollBtn.dataset.scroll);if(target)target.scrollIntoView({behavior:"smooth"});return;}
+ var admBtn=e.target.closest("[data-admin-anchor]");if(admBtn){var target=el(admBtn.dataset.adminAnchor);if(target)target.scrollIntoView({behavior:"smooth"});return;}
  var routeBtn=e.target.closest("[data-route]");if(routeBtn){e.preventDefault();navigate(routeBtn.getAttribute("data-route"));return;}
  var tierBtn=e.target.closest("[data-tier]");if(tierBtn){changeTier(tierBtn.getAttribute("data-tier"));navigate("home");return;}
  var eventBtn=e.target.closest("[data-event]");if(eventBtn){openEvent(eventBtn.getAttribute("data-event"));return;}
@@ -122,6 +128,7 @@ document.addEventListener("click",function(e){
  var job=e.target.closest("[data-job]");if(job){var j=JOBS[Number(job.getAttribute("data-job"))];if(j){el("event-dialog-body").innerHTML='<div class="dialog-body"><span class="dialog-meta">OPORTUNITATE FICTIVĂ · '+esc(j.type)+'</span><h2>'+esc(j.title)+'</h2><p>'+esc(j.description)+'</p><p>Organizație: '+esc(j.org)+'<br>Format: '+esc(j.place)+'</p><p>Nu există o oportunitate sau un proces de aplicare real.</p></div>';el("event-dialog").showModal();}return;}
 });
 document.addEventListener("submit",function(ev){
+ if(ev.target.id==="directory-filter-form"){ev.preventDefault();renderDirectory();return;}
  if(ev.target.id==="guest-signup"){ev.preventDefault();if(!eventOpen)return;signup(eventOpen,"guest");return;}
  if(ev.target.id==="profile-form"){ev.preventDefault();if(!roleAllowed("member"))return;var y=el("profile-year").value.trim();if(!/^(19|20)\d{2}$/.test(y)){toast("Introdu un an de absolvire valid (1900–2099).");return;}state.profile={name:el("profile-name").value.trim(),faculty:el("profile-faculty").value,year:y,field:el("profile-field").value.trim(),directory:el("profile-directory").checked};save();renderMember();renderDirectory();toast("Profilul fictiv a fost salvat doar în această sesiune.");return;}
  if(ev.target.id==="cms-form"){ev.preventDefault();if(!roleAllowed("cms"))return;var type=el("cms-type").value, title=el("cms-title").value.trim(),desc=el("cms-description").value.trim(),published=el("cms-published").checked,cat=el("cms-category").value;var date=el("cms-date").value;if(!title||!desc){toast("Completează titlul și descrierea.");return;}if(type==="event"&&!date){toast("Alege data evenimentului.");return;}var id=(type==="event"?"e":"s")+"demo"+Date.now();var entry={id:id,title:title,description:desc,category:cat,date:type==="event"?date:new Date().toISOString().slice(0,10),published:published};if(type==="event"){entry.place="Locație demonstrativă";entry.capacity=50;entry.baseCount=0;state.events.push(entry);}else state.stories.push(entry);logAction("Conținut nou: "+title);save();ev.target.reset();el("cms-date-wrap").hidden=true;el("cms-category-wrap").hidden=false;render();toast(published?"Conținutul a fost publicat în demo.":"Conținutul a fost salvat ca arhivat.");return;}
@@ -129,6 +136,8 @@ document.addEventListener("submit",function(ev){
 document.querySelectorAll('input[name="tier"]').forEach(function(r){r.addEventListener("change",function(){if(r.checked)changeTier(r.value);});});
 el("role-switch").addEventListener("change",function(e){state.role=e.target.value;save();render();toast("Rol simulat: "+e.target.options[e.target.selectedIndex].text+". Nu este autentificare reală.");});
 el("event-filter").addEventListener("change",renderEvents);el("job-filter").addEventListener("change",renderJobs);el("directory-search").addEventListener("input",renderDirectory);
+["directory-faculty","directory-year","directory-field"].forEach(function(id){el(id).addEventListener("change",renderDirectory);});
+el("directory-reset").addEventListener("click",function(){el("directory-search").value="";el("directory-faculty").value="all";el("directory-year").value="all";el("directory-field").value="all";renderDirectory();});
 el("cms-type").addEventListener("change",function(e){var event=e.target.value==="event";el("cms-date-wrap").hidden=!event;el("cms-date").required=event;el("cms-category-wrap").hidden=false;});
 el("mobile-toggle").addEventListener("click",function(){var n=el("mobile-nav");n.hidden=!n.hidden;el("mobile-toggle").setAttribute("aria-expanded",String(!n.hidden));});
 el("download-csv").addEventListener("click",function(){if(roleAllowed("admin"))downloadCSV();});
